@@ -1,0 +1,5 @@
+com/cadebe/petclinic/model/Person.class
+com/cadebe/petclinic/model/PetType.class
+com/cadebe/petclinic/model/Vet.class
+com/cadebe/petclinic/model/Pet.class
+com/cadebe/petclinic/model/Owner.class
