@@ -17,7 +17,7 @@
 
     <groupId>com.cadebe</groupId>
     <artifactId>pet-clinic</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>pet-clinic</name>
     <description>Pet clinic demo project for Spring Boot</description>
 
@@ -37,15 +37,13 @@
                 <version>2.5.3</version>
                 <configuration>
                     <goals>install</goals>
-                    <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
             </plugin>
         </plugins>
     </build>
 
     <scm>
-        <developerConnection>scm:git:git@github.com:pet-clinic.git</developerConnection>
-        <tag>HEAD</tag>
+        <developerConnection>scm:git:https://github.com/Carla-de-Beer/pet-clinic.git</developerConnection>
     </scm>
 
 </project>
