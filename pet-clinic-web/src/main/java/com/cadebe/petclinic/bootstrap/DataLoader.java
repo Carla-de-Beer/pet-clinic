@@ -1,6 +1,7 @@
 package com.cadebe.petclinic.bootstrap;
 
 import com.cadebe.petclinic.model.Owner;
+import com.cadebe.petclinic.model.Pet;
 import com.cadebe.petclinic.model.PetType;
 import com.cadebe.petclinic.model.Vet;
 import com.cadebe.petclinic.service.OwnerService;
@@ -9,6 +10,8 @@ import com.cadebe.petclinic.service.VetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -38,12 +41,32 @@ public class DataLoader implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
+        owner1.setAddress("123 Brick Lane");
+        owner1.setCity("Miami");
+        owner1.setTelephone("0345-78958001");
+
+        Pet mikesPet = new Pet();
+        mikesPet.setPetType(savedDogPetType);
+        mikesPet.setOwner(owner1);
+        mikesPet.setBirthdate(LocalDate.now());
+        mikesPet.setName("Rosco");
+        owner1.getPets().add(mikesPet);
 
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Fiona");
         owner2.setLastName("Glenanne");
+        owner2.setAddress("123 Brick Lane");
+        owner2.setCity("Miami");
+        owner2.setTelephone("0345-78958001");
+
+        Pet fionasPet = new Pet();
+        fionasPet.setPetType(savedCatPetType);
+        fionasPet.setOwner(owner2);
+        fionasPet.setBirthdate(LocalDate.now());
+        fionasPet.setName("Just Cat");
+        owner2.getPets().add(fionasPet);
 
         ownerService.save(owner2);
 
