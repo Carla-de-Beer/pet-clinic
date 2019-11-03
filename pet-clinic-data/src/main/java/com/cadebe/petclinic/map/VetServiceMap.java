@@ -2,9 +2,11 @@ package com.cadebe.petclinic.map;
 
 import com.cadebe.petclinic.model.Vet;
 import com.cadebe.petclinic.service.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override

@@ -1,11 +1,10 @@
 package com.cadebe.petclinic.bootstrap;
 
-import com.cadebe.petclinic.map.OwnerServiceMap;
-import com.cadebe.petclinic.map.VetServiceMap;
 import com.cadebe.petclinic.model.Owner;
 import com.cadebe.petclinic.model.Vet;
 import com.cadebe.petclinic.service.OwnerService;
 import com.cadebe.petclinic.service.VetService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -15,13 +14,14 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader() {
-        this.ownerService = new OwnerServiceMap();
-        this.vetService = new VetServiceMap();
+    @Autowired
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         Owner owner1 = new Owner();
         owner1.setId(1L);
         owner1.setFirstName("Michael");
@@ -49,6 +49,5 @@ public class DataLoader implements CommandLineRunner {
         vet2.setLastName("Porter");
 
         vetService.save(vet2);
-
     }
 }
