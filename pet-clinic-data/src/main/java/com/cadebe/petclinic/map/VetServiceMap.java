@@ -1,11 +1,11 @@
 package com.cadebe.petclinic.map;
 
 import com.cadebe.petclinic.model.Vet;
-import com.cadebe.petclinic.service.CrudService;
+import com.cadebe.petclinic.service.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
     public Set<Vet> findAll() {
