@@ -1,5 +1,14 @@
+com/cadebe/petclinic/map/PetServiceMap.class
 com/cadebe/petclinic/model/Person.class
-com/cadebe/petclinic/model/PetType.class
 com/cadebe/petclinic/model/Vet.class
+com/cadebe/petclinic/service/CrudService.class
+com/cadebe/petclinic/map/OwnerServiceMap.class
+com/cadebe/petclinic/map/VetServiceMap.class
+com/cadebe/petclinic/map/AbstractMapService.class
+com/cadebe/petclinic/service/OwnerService.class
+com/cadebe/petclinic/service/PetService.class
 com/cadebe/petclinic/model/Pet.class
+com/cadebe/petclinic/service/VetService.class
+com/cadebe/petclinic/model/PetType.class
+com/cadebe/petclinic/model/BaseEntity.class
 com/cadebe/petclinic/model/Owner.class

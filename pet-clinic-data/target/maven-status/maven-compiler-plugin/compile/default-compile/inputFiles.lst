@@ -1,5 +1,14 @@
+/Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-data/src/main/java/com/cadebe/petclinic/service/CrudService.java
+/Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-data/src/main/java/com/cadebe/petclinic/service/OwnerService.java
+/Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-data/src/main/java/com/cadebe/petclinic/model/Owner.java
+/Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-data/src/main/java/com/cadebe/petclinic/service/VetService.java
+/Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-data/src/main/java/com/cadebe/petclinic/service/PetService.java
+/Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-data/src/main/java/com/cadebe/petclinic/model/BaseEntity.java
 /Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-data/src/main/java/com/cadebe/petclinic/model/Vet.java
+/Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-data/src/main/java/com/cadebe/petclinic/map/PetServiceMap.java
+/Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-data/src/main/java/com/cadebe/petclinic/map/AbstractMapService.java
+/Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-data/src/main/java/com/cadebe/petclinic/map/OwnerServiceMap.java
 /Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-data/src/main/java/com/cadebe/petclinic/model/PetType.java
 /Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-data/src/main/java/com/cadebe/petclinic/model/Person.java
-/Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-data/src/main/java/com/cadebe/petclinic/model/Owner.java
+/Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-data/src/main/java/com/cadebe/petclinic/map/VetServiceMap.java
 /Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-data/src/main/java/com/cadebe/petclinic/model/Pet.java
