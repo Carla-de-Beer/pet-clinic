@@ -1,18 +1,18 @@
 package com.cadebe.petclinic.model;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
-@Getter
 @Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 @Entity
 @Table(name = "visit")
-public class Visit {
+public class Visit extends BaseEntity {
 
     @Column(name = "date")
     private LocalDate date;
@@ -23,4 +23,8 @@ public class Visit {
     @ManyToOne
     @JoinColumn(name = "pet_id")
     private Pet pet;
+
+    public LocalDate getDate() {
+        return date;
+    }
 }
