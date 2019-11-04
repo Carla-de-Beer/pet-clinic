@@ -5,17 +5,19 @@ import com.cadebe.petclinic.model.Vet;
 import com.cadebe.petclinic.service.SpecialityService;
 import com.cadebe.petclinic.service.VetService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
+@Profile({"default", "map"})
+public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
 
     private final SpecialityService specialityService;
 
     @Autowired
-    public VetServiceMap(SpecialityService service) {
+    public VetMapService(SpecialityService service) {
         this.specialityService = service;
     }
 

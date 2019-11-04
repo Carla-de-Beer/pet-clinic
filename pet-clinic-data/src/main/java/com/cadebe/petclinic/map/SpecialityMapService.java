@@ -2,11 +2,13 @@ package com.cadebe.petclinic.map;
 
 import com.cadebe.petclinic.model.Speciality;
 import com.cadebe.petclinic.service.SpecialityService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class SpecialityMapService extends AbstractMapService<Speciality, Long> implements SpecialityService {
 
     @Override
