@@ -3,12 +3,14 @@ package com.cadebe.petclinic.service;
 import com.cadebe.petclinic.model.PetType;
 import com.cadebe.petclinic.repository.PetTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Service
+@Profile("springdatajpa")
 public class PetTypeSDJpaService implements PetTypeService {
 
     private final PetTypeRepository petTypeRepository;
