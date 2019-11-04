@@ -2,7 +2,6 @@ package com.cadebe.petclinic.map;
 
 import com.cadebe.petclinic.model.Owner;
 import com.cadebe.petclinic.model.Pet;
-import com.cadebe.petclinic.model.PetType;
 import com.cadebe.petclinic.service.OwnerService;
 import com.cadebe.petclinic.service.PetService;
 import com.cadebe.petclinic.service.PetTypeService;
