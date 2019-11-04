@@ -10,6 +10,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -47,12 +48,12 @@ public class DataLoader implements CommandLineRunner {
                 .build();
         PetType savedCatPetType = petTypeService.save(cat);
 
-        Owner owner1 = new Owner();
-        owner1.setFirstName("Michael");
-        owner1.setLastName("Weston");
-        owner1.setAddress("123 Brick Lane");
-        owner1.setCity("Miami");
-        owner1.setTelephone("0345-78958001");
+        Owner owner1 = Owner.builder().firstName("Michael")
+                .lastName("Weston")
+                .address("123 Brick Lane")
+                .city("Miami")
+                .telephone("0345-78958001")
+                .build();
 
         Pet mikesPet = Pet.builder()
                 .petType(savedDogPetType)
@@ -65,12 +66,12 @@ public class DataLoader implements CommandLineRunner {
 
         ownerService.save(owner1);
 
-        Owner owner2 = new Owner();
-        owner2.setFirstName("Fiona");
-        owner2.setLastName("Glenanne");
-        owner2.setAddress("123 Brick Lane");
-        owner2.setCity("Miami");
-        owner2.setTelephone("0345-78958001");
+        Owner owner2 = Owner.builder().firstName("Fiona")
+                .lastName("Glenanne")
+                .address("123 Brick Lane")
+                .city("Miami")
+                .telephone("0345-78958001")
+                .build();
 
         System.out.println("Loaded owners");
 
