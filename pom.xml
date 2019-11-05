@@ -29,6 +29,15 @@
         <failsafe.plugin.version>3.0.0-M3</failsafe.plugin.version>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.11.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
