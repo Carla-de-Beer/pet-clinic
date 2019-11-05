@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
-    <modules>
-        <module>pet-clinic-data</module>
-        <module>pet-clinic-web</module>
-    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -21,8 +15,18 @@
     <name>pet-clinic</name>
     <description>Pet clinic demo project for Spring Boot</description>
 
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>pet-clinic-data</module>
+        <module>pet-clinic-web</module>
+    </modules>
+
     <properties>
         <java.version>11</java.version>
+        <surefire.plugin.version>3.0.0-M3</surefire.plugin.version>
+        <failsafe.plugin.version>3.0.0-M3</failsafe.plugin.version>
     </properties>
 
     <build>
@@ -34,17 +38,34 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.5.3</version>
                 <configuration>
                     <goals>install</goals>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.22.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
     <scm>
-        <developerConnection>scm:git:git@github.com:pet-clinic.git</developerConnection>
+        <developerConnection>scm:git:git@github.com/Carla-de-Beer/pet-clinic.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
