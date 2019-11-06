@@ -21,4 +21,8 @@ public class BaseEntity implements Serializable {
     @Id     // boxed types can be null whereas primitives cannot. Requirement from JPA to use boxed types.
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    public boolean isNew() {
+        return this.id == null;
+    }
 }
