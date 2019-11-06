@@ -10,7 +10,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-import java.util.HashSet;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -58,7 +57,7 @@ public class DataLoader implements CommandLineRunner {
         Pet mikesPet = Pet.builder()
                 .petType(savedDogPetType)
                 .owner(owner1)
-                .birthdate(LocalDate.now())
+                .birthDate(LocalDate.now())
                 .name("Rosco")
                 .build();
 
@@ -78,7 +77,7 @@ public class DataLoader implements CommandLineRunner {
         Pet fionasPet = Pet.builder()
                 .petType(savedCatPetType)
                 .owner(owner2)
-                .birthdate(LocalDate.now())
+                .birthDate(LocalDate.now())
                 .name("Just Cat")
                 .build();
 

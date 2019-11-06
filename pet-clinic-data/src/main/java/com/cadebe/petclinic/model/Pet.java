@@ -20,7 +20,7 @@ public class Pet extends BaseEntity {
     private String name;
 
     @Column(name = "birth_date")
-    private LocalDate birthdate;
+    private LocalDate birthDate;
 
     @ManyToOne
     @JoinColumn(name = "owner_id") // tells Hibernate how these two entities are related at db level
