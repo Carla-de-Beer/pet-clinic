@@ -14,14 +14,15 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
 import static org.hamcrest.Matchers.is;
-import static org.hamcrest.beans.HasProperty.hasProperty;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.mockito.ArgumentMatchers.anyLong;
-import static org.mockito.ArgumentMatchers.isNotNull;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -37,15 +38,12 @@ class OwnerControllerTest {
     @InjectMocks
     OwnerController controller;
 
-    private Set<Owner> owners;
-
     private MockMvc mockMvc;
-
-    private final Long OWNER_ID = 1L;
 
     @BeforeEach
     void setUp() {
-        owners = new HashSet<>();
+        Set<Owner> owners = new HashSet<>();
+        Long OWNER_ID = 1L;
         owners.add(Owner.builder().id(OWNER_ID).build());
         owners.add(Owner.builder().id(2L).build());
 
@@ -55,33 +53,38 @@ class OwnerControllerTest {
     }
 
     @Test
-    @DisplayName("Test find owners (uri 1)")
-    void findOwnersPath1() throws Exception {
-        when(ownerService.findAll()).thenReturn(owners);
+    @DisplayName("Test find all by last name like")
+    void findAllByLastNameLike() throws Exception {
+        when(ownerService.findAllByLastNameLike(anyString())).thenReturn(Arrays.asList(Owner.builder().id(1L).build(),
+                Owner.builder().id(2L).build()));
 
-        mockMvc.perform(get("/owners/index"))
+        mockMvc.perform(get("/owners"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("owners/index"))
-                .andExpect(model().attribute("owners", hasSize(2)));
+                .andExpect(view().name("owners/ownersList"))
+                .andExpect(model().attribute("selections", hasSize(2)));
     }
 
     @Test
-    @DisplayName("Test find owners (uri 2)")
-    void findOwnersPath2() throws Exception {
-        when(ownerService.findAll()).thenReturn(owners);
+    @DisplayName("Test process find form return one")
+    void processFindFormReturnOne() throws Exception {
+        when(ownerService.findAllByLastNameLike(anyString())).thenReturn(Collections.singletonList(Owner.builder().id(1L).build()));
 
-        mockMvc.perform(get("/owners/index.html"))
-                .andExpect(status().isOk())
-                .andExpect(view().name("owners/index"))
-                .andExpect(model().attribute("owners", hasSize(2)));
+        mockMvc.perform(get("/owners"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(view().name("redirect:/owners/1"));
     }
 
     @Test
-    @DisplayName("Test find owners (not implemented)")
-    void findOwners() throws Exception {
-        mockMvc.perform(get("/owners/find"))
+    @DisplayName("Test process find form return many")
+    void processFindFormReturnMany() throws Exception {
+        when(ownerService.findAllByLastNameLike(anyString())).thenReturn(
+                Arrays.asList(Owner.builder().id(1L).build(),
+                        Owner.builder().id(2L).build()));
+
+        mockMvc.perform(get("/owners"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("notimplemented"));
+                .andExpect(view().name("owners/ownersList"))
+                .andExpect(model().attribute("selections", hasSize(2)));
     }
 
     @Test
