@@ -2,6 +2,7 @@ package com.cadebe.petclinic.controller;
 
 import com.cadebe.petclinic.model.Owner;
 import com.cadebe.petclinic.service.OwnerService;
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -16,7 +17,11 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import java.util.HashSet;
 import java.util.Set;
 
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.beans.HasProperty.hasProperty;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.isNotNull;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -77,6 +82,17 @@ class OwnerControllerTest {
         mockMvc.perform(get("/owners/find"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("notimplemented"));
+    }
+
+    @Test
+    @DisplayName("Test show owner")
+    void showOwner() throws Exception {
+        when(ownerService.findById(anyLong())).thenReturn(Owner.builder().id(1L).build());
+
+        mockMvc.perform(get("/owners/123"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("owners/ownerDetails"))
+                .andExpect(model().attribute("owner", Matchers.hasProperty("id", is(1L))));
 
     }
 }

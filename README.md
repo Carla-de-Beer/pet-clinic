@@ -1,5 +1,5 @@
 # Pet Clinic
-[![CircleCI](https://circleci.com/gh/Carla-de-Beer/pet-clinic.svg?style=svg)](https://circleci.com/gh/Carla-de-Beer/pet-clinic)
+[![CircleCI](https://circleci.com/gh/Carla-de-Beer/pet-clinic/tree/master.svg?style=svg)](https://circleci.com/gh/Carla-de-Beer/pet-clinic/tree/master)
 [![GitHub issues](https://img.shields.io/github/issues/Carla-de-Beer/pet-clinic.svg?style=flat-square)](https://github.com/Carla-de-Beer/pet-clinic/issues)
 
 
