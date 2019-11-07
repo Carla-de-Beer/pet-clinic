@@ -28,13 +28,13 @@ public class VisitController {
         this.petService = petService;
     }
 
+    // To prevent dat from not being parsed properly
     @InitBinder
     public void dataBinder(WebDataBinder dataBinder) {
         dataBinder.setDisallowedFields("id");
-
         dataBinder.registerCustomEditor(LocalDate.class, new PropertyEditorSupport() {
             @Override
-            public void setAsText(String text) throws IllegalArgumentException{
+            public void setAsText(String text) throws IllegalArgumentException {
                 setValue(LocalDate.parse(text));
             }
         });

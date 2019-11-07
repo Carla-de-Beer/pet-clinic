@@ -22,6 +22,7 @@ com/cadebe/petclinic/model/Person.class
 com/cadebe/petclinic/model/Speciality.class
 com/cadebe/petclinic/service/CrudService.class
 com/cadebe/petclinic/map/SpecialityMapService.class
+com/cadebe/petclinic/repository/VisitRepository.class
 com/cadebe/petclinic/map/VisitMapService.class
 com/cadebe/petclinic/model/PetType$PetTypeBuilder.class
 com/cadebe/petclinic/map/AbstractMapService.class
@@ -33,6 +34,7 @@ com/cadebe/petclinic/model/Visit.class
 com/cadebe/petclinic/service/VetService.class
 com/cadebe/petclinic/model/PetType.class
 com/cadebe/petclinic/service/PetTypeService.class
+com/cadebe/petclinic/service/VisitSDJpaService.class
 com/cadebe/petclinic/model/BaseEntity.class
 com/cadebe/petclinic/model/Owner.class
 com/cadebe/petclinic/service/PetSDJpaService.class

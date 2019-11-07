@@ -10,9 +10,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.ArgumentMatchers.*;
@@ -61,6 +59,18 @@ class OwnerSDJpaServiceTest {
         then(ownerRepository).should().findByLastName(anyString());
 
         verify(ownerRepository).findByLastName(any());
+    }
+
+    @Test
+    @DisplayName("Test find owners by last name like")
+    void findOwnersByLastNameLike() {
+        // when
+        when(ownerRepository.findByLastNameLike(LAST_NAME)).thenReturn(Collections.singletonList(owner));
+        List<Owner> ownerList = service.findAllByLastNameLike(LAST_NAME);
+
+        assertThat(ownerList.size())
+                .withFailMessage("Could not find owners by last name like")
+                .isEqualTo(1);
     }
 
     @Test

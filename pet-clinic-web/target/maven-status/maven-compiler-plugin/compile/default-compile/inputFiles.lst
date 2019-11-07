@@ -1,5 +1,8 @@
 /Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-web/src/main/java/com/cadebe/petclinic/controller/OwnerController.java
 /Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-web/src/main/java/com/cadebe/petclinic/controller/IndexController.java
+/Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-web/src/main/java/com/cadebe/petclinic/controller/PetController.java
+/Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-web/src/main/java/com/cadebe/petclinic/formatter/PetTypeFormatter.java
 /Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-web/src/main/java/com/cadebe/petclinic/controller/VetController.java
+/Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-web/src/main/java/com/cadebe/petclinic/controller/VisitController.java
 /Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-web/src/main/java/com/cadebe/petclinic/PetClinicApplication.java
 /Users/cadebe/IdeaProjects/SpringBoot/pet-clinic/pet-clinic-web/src/main/java/com/cadebe/petclinic/bootstrap/DataLoader.java

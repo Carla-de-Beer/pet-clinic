@@ -1,5 +1,9 @@
 com/cadebe/petclinic/bootstrap/DataLoader.class
+com/cadebe/petclinic/controller/VisitController.class
 com/cadebe/petclinic/controller/IndexController.class
 com/cadebe/petclinic/controller/OwnerController.class
 com/cadebe/petclinic/PetClinicApplication.class
+com/cadebe/petclinic/controller/PetController.class
 com/cadebe/petclinic/controller/VetController.class
+com/cadebe/petclinic/controller/VisitController$1.class
+com/cadebe/petclinic/formatter/PetTypeFormatter.class
